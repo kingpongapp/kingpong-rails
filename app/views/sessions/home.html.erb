@@ -1,4 +1,5 @@
 <div class="login_form">
+<<<<<<< HEAD
   <h2>New user</h2>
 
   <form class="" action="/session" method="post">
@@ -16,4 +17,30 @@
   <form action="/session" method="post">
     <button>Create user</button>
   </form>
+=======
+  <h2>New user test</h2>
+
+<form class="" action="/player" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	
+	<div>
+		<label>Email</label>
+		<input type="text" name="email">
+		<label>Password</label>
+		<input type="password" name="password">	
+	</div>
+
+	<div>
+		<label>Name</label>
+		<input type="text" name="name">
+		<label>Nickname</label>
+		<input type="text" name="nickname">
+		<label>Image</label>
+		<input type="text" name="image">
+	</div>
+
+    <button>Create User</button>
+</form>
+
+>>>>>>> master
 </div>
