@@ -4,11 +4,36 @@
     <title>KingPong</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+
+    <% if logged_in? %>
+      <p>Logged in as:
+        <%= current_user.email %></p>
+      <form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button>Sign out</button>
+      </form>
+    <% else %>
+      <form class="" action="/session" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <label>Email</label>
+        <input type="text" name="email">
+
+        <label>Password</label>
+        <input type="password" name="password">
+
+        <button>Login</button>
+      </form>
+    <% end %>
+  </header>
 
   <body>
     <%= yield %>
   </body>
+
 </html>
