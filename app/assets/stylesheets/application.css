@@ -13,9 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-
-form .form-horizontal .register {
-  padding-left: 30px;
-  font-size: 15px
-}
