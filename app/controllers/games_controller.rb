@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
 
   def index
-    # @player = Player.where(id: PlayerGame.find(:player_id))
+    @player = Player.includes(:PlayerGame)
     @player_games = PlayerGame.all
     @games = Game.all
     
