@@ -1,13 +1,15 @@
-class SessionsController < ApplicationController 
+class SessionsController < ApplicationController
 
 	def home
 
-	end	
+	end
 
 	def create
 		player = Player.new
 		player.email = params[:email]
 		player.password = params[:password]
-		render :new
-	end	
+		player.save
+
+		redirect_to '/'
+	end
 end
