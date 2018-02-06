@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-		def create
+	def create
 		player = Player.new
 		player.email = params[:email]
 		player.password = params[:password]
@@ -10,4 +10,3 @@ class PlayersController < ApplicationController
 		redirect_to '/'
 	end
 end
-
