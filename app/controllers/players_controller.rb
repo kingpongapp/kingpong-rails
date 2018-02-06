@@ -24,4 +24,4 @@ end
 		# config.consumer_secret     = "AOHeeWOY5wNfoq1y6VuzCUoPDbOREfk0UGRZHIjPx7hFTX4atV"
 		# config.access_token        = "960740313882009600-K9rIEKzC5O5sw3g1kH8PYZnjMeFFx48"
 		# config.access_token_secret = "oypKXUpp79RUgrH0MVtwXejfPQwqtXtCj7y9XxjrSkQbd"
-	# end	
+	# end
