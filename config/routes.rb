@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   post '/session', to: 'session#create'
 
+  get '/draw', to: 'games#draw'
+
   delete '/session', to: 'session#destroy'
 end
