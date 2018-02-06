@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/', to: 'sessions#home'
 
-  post '/session', to: 'sessions#create'
+  post '/session', to: 'players#create'
 
   delete '/session', to: 'sessions#destroy'
 
