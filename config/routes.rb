@@ -10,6 +10,5 @@ Rails.application.routes.draw do
 
   delete '/session', to: 'sessions#destroy'
 
-  get '/draw', to: 'games#draw'
 
 end
