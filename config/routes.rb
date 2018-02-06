@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   post '/session', to: 'sessions#create'
 
+  post '/player', to: 'players#create'
+
   delete '/session', to: 'sessions#destroy'
+
+  get '/player/new', to: 'players#show'
 
 
 end
