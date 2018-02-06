@@ -11,7 +11,6 @@ class PlayersController < ApplicationController
 	end
 
 end
-
 	# def show
 		# player = Player.find_by(name: )
 		# @nickname = player.nickname
