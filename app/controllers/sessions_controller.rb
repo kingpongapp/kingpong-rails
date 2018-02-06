@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
-
-	def home
+	
+  def home
 	end
 
-	def create
+  def create
     player = Player.find_by(email: params[:email])
     if player && player.authenticate(params[:password])
-      session[:user_id] = user.id
+      session[:player_id] = player.id
       redirect_to '/'
     else
       render :home
@@ -14,9 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:player_id] = nil
     redirect_to '/'
   end
-end
-
 end

@@ -1,7 +1,7 @@
 module SessionsHelper
-  
+
   def current_user
-    Player.find_by(id: session[:user_id])
+    Player.find_by(id: session[:player_id])
   end
 
   def logged_in?
