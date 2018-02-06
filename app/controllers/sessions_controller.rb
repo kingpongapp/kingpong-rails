@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
-	
-  def home
-	end
+  def home; end
 
   def create
     player = Player.find_by(email: params[:email])
