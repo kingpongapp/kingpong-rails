@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-		def create
+	def create
 		player = Player.new
 		player.email = params[:email]
 		player.password = params[:password]
@@ -7,7 +7,11 @@ class PlayersController < ApplicationController
 		player.nickname = params[:nickname]
 		player.image_url = params[:image]
 		player.save
-		redirect_to '/'
+		redirect_to '/player/new'
 	end
+
+	def show
+		render :welcome
+	end	
 end
 
