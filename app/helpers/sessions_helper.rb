@@ -5,7 +5,7 @@ module SessionsHelper
   end
 
   def logged_in?
-    if current_user # or !! current_user
+    if current_user
       true
     else
       false
