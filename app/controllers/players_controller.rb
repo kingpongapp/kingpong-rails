@@ -7,7 +7,7 @@ class PlayersController < ApplicationController
 		player.nickname = params[:nickname]
 		player.image_url = params[:image]
 		player.save
-
 		redirect_to '/'
 	end
 end
+
