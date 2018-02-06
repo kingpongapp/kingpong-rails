@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   resources :player_games
   resources :players
 
-  get '/', to: 'session#home'
 
-  post '/session', to: 'session#create'
+  get '/', to: 'sessions#home'
+
+  post '/session', to: 'sessions#create'
+
+  delete '/session', to: 'sessions#destroy'
 
 
-  delete '/session', to: 'session#destroy'
 end
