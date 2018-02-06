@@ -14,4 +14,3 @@ class PlayersController < ApplicationController
 		render :welcome
 	end	
 end
-
