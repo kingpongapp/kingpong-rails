@@ -16,10 +16,10 @@ class PlayersController < ApplicationController
 
 	def show
 		@player = Player.find(params[:id])	
-  end
-  
-  def api_rating
-    render json: {info: 'receive rating'}
-  end
+	end
+
+  	def api_rating
+    	render json: {info: 'receive rating'}
+  	end
 
 end
