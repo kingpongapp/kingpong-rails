@@ -1,7 +1,7 @@
 
 <% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
 
-<% binding.pry%>
+<% #binding.pry%>
 <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs justify-content-center">
@@ -16,8 +16,14 @@
                   <p class="card-text"><%=player.score%></p>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                  <a href="#" class="btn btn-primary">Accept</a>
-                  <a href="#" class="btn btn-primary">Decline</a>
+                  <a href="#" class="btn btn-primary accept-btn">Accept</a>
+                  <a href="#" class="btn btn-primary decline-btn">Decline</a>
+                  <div class="accept" style="color:LightSeaGreen ">
+                    <i class="far fa-check-circle fa-7x" style="display:none"></i>
+                  </div>
+                  <div class="decline" style="color:LightCoral  ">
+                    <i class="far fa-times-circle fa-7x"></i>
+                  </div>
                 </div>
               </div>
             <% end %>
