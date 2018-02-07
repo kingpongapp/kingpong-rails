@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <header>
@@ -25,13 +26,14 @@
           </li>
         </ul>
         <span class="navbar-text">
+          <div class="logged-in">
           <% if logged_in? %>
-          <p>Logged in as:
+          <p style="float: left">Logged in as:
             <%= current_user.email %></p>
             <form action="/session" method="post">
               <input type="hidden" name="_method" value="delete">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <button>Sign out</button>
+              <button class="btn btn-primary" style="float: right;">Sign out</button>
             </form>
             <% else %>
             <form class="" action="/session" method="post">
@@ -43,7 +45,7 @@
               <label>Password</label>
               <input type="password" name="password">
 
-              <button>Login</button>
+              <button class="btn btn-primary">Login</button>
             </form>
             <% end %>
 
