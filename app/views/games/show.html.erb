@@ -13,16 +13,21 @@
               <div class="card border-success mb-3" style="max-width: 18rem;">
                 <div class="card-body text-success">
                   <h5 class="card-title"><%=player.name%></h5>
-                  <p class="card-text"><%=player.score%></p>
+
+                  <div>
+                    <i class="fas fa-certificate fa-5x" style="color:LemonChiffon"></i>
+                    <p class="card-text"><%=player.score%>
+                    </p>
+                  </div>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                  <a href="#" class="btn btn-primary accept-btn">Accept</a>
-                  <a href="#" class="btn btn-primary decline-btn">Decline</a>
-                  <div class="accept" style="color:LightSeaGreen ">
-                    <i class="far fa-check-circle fa-7x" style="display:none"></i>
+                  <a href="#" class="btn btn-outline-primary accept-btn">Accept</a>
+                  <a href="#" class="btn btn-outline-primary decline-btn">Decline</a>
+                  <div style="color:LightSeaGreen ">
+                    <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
                   </div>
-                  <div class="decline" style="color:LightCoral  ">
-                    <i class="far fa-times-circle fa-7x"></i>
+                  <div style="color:LightCoral  ">
+                    <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
                   </div>
                 </div>
               </div>
@@ -34,7 +39,10 @@
       <li class="nav-item">
         <a class="nav-link active" href="#">Result</a>
         <div class="result-body">
+          <form action="" method="post">
+          <input type="hidden" name="authentication_token" value="form_authentication_token">
           <a href="#" class="btn btn-primary">Claim win</a>
+          </form>
         </div>
       </li>
     </ul>
