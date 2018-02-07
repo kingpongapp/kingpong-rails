@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .player-card {
-  background-color: mistyrose;
   width: 100%;
   margin-bottom: 3%;
   border-radius: 0.2em;
@@ -82,4 +81,34 @@
     margin-left: 1%;
     margin-right: 1%;
   }
+}
+
+.main-block {
+  display: inline-block;
+  width: 50%;
+}
+
+.main-block img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.side-block {
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}
+
+.game-history {
+  display: inline-block;
+  width: 49%;
+
+}
+
+.comments-block {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
 }
