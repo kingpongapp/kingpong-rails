@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Player.create(name: 'Ross', email: 'xyz@gmail.com')
-Player.create(name: 'Anu', email: 'abc@gmail.com')
-Player.create(name: 'Rob', email: '123@gmail.com')
+Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
+Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
+Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
