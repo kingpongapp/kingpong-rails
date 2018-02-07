@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   get '/pages', to: 'pages#show'
 
+  get '/api/players', to: 'players#api_rating'
+
 end

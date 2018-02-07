@@ -9,6 +9,7 @@ end
 gem 'round_robin_tournament'
 # The Elo rating system is a method for calculating the relative skill levels of players in two-player games
 gem 'elo'
+gem 'elo_rating', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
