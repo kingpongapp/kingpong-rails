@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def show
+    render :show
+  end
+
 end
