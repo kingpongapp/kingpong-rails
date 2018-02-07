@@ -1,7 +1,26 @@
 <div class="login_form">
+<<<<<<< HEAD
+  <h2>New user</h2>
+
+  <form class="" action="/session" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label>Email</label>
+    <input type="text" name="email">
+
+    <label>Password</label>
+    <input type="password" name="password">
+
+    <button>Login</button>
+  </form>
+
+  <form action="/session" method="post">
+    <button>Create user</button>
+  </form>
+=======
   <h2>New user test</h2>
 
-<form class="" action="/player" method="post">
+<form class="" action="/players" method="post">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	
 	<div>
@@ -23,4 +42,5 @@
     <button>Create User</button>
 </form>
 
+>>>>>>> master
 </div>

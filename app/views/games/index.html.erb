@@ -1,4 +1,33 @@
-<form action='/games' method="post">
-  <input type="hidden" name="authenticity_token" value="form_authenticity_token">
-  <button>Generate Draw</button>
-</form>
+
+<% if @player_games.length == 0%>
+  <form action='/games' method="post">
+    <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+    <button>Generate Draw</button>
+  </form>
+<% end %>
+
+<div class="draw-container">
+<% if @player_games%>
+  <% @games.each do |game|%>
+    <% player_pairing = @player_games.select do |player_game|%>
+    <% player_game.game_id == game.id%>
+  <%end %>
+  <div class="draw-row">
+    <% player_pairing.each do |player| %>
+    <% end %>
+  </div>
+<% end %>
+
+
+  <% @player_games.each do |game|%>
+  <li> player id = <%= game.player_id%>, game id = <%= game.game_id%></li>
+  <% end %>
+<% end %>
+</div> 
+
+<div>
+  <% @games.each do |game| %>
+
+
+</div>
+
