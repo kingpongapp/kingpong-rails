@@ -1,19 +1,19 @@
 <main class="content"> 
   <% @players.each do |player| %>
-  <a class="player-card" href="/players/<%= player.id %>">
+  <a class="card player-card" href="/players/<%= player.id %>">
     <header class="content">
-      <h3><%= player.name %></h3> 
-      <div class="card-score"><%= player.score %></div>
+      <h3 class="card-title"><%= player.name %></h3> 
+      <div class="card-score">Score: <%= player.score %></div>
     </header>
 
     <div class="card-image">
-      <img src="https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97800&w=800&h=800" alt="">
+      <img class="card-img-top" src="<%= player.image_url %>" alt="">
       <span class="star">&#9733;</span>
     </div>
 
-    <div class="content">
-      <h4>Nickname: <%= player.nickname %></h4>
-      <h4>Games Won:</h4>
+    <div class="card-body">
+      <p class="card-text">Nickname: <%= player.nickname %></p>
+      <p class="card-text">Games Won:</p>
     </div>
 
     <footer class="content">
