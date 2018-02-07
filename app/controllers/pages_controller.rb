@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def show
+    @players = Player.all
+
     render :show
   end
 

@@ -57,7 +57,7 @@
           </tr>
         </thead>
         <tbody class="rankings">
-          <% Player.all.each do |player| %>
+          <% @players.each do |player| %>
             <tr>
               <th scope="row">1</th>
               <td><img src="<%= player.image_url %>" style="height: 40px; width: 40px;"></td>
