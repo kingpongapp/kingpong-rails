@@ -10,22 +10,13 @@
 # Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
 # Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
 # Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
-
-Player.delete_all
-
+Project.delete_all
 
 name = ['Fouad', 'Anu', 'Robbie', 'Ross', 'Alex']
-nickname = ['muffin', 'noodles', 'candy', 'slicer', 'ponger', 'smashof', 'sponge']
-
-
-player = Player.new
-player.email = 'test@gmail.com'
-player.image_url
-player.score
-player.save
+nickname = ['muffin', 'noodles', 'candy', 'slicer', 'ponger', 'smashoff', 'sponge']
 
 20.times do
   Player.create(
-    name: "#{name.sample}", nickname: "#{nickname.sample}",
+    name: name.sample, email: "test@gmail.com", nickname: nickname.sample, image_url: "https://images-na.ssl-images-amazon.com/images/I/41kbIruQrnL.jpg", score: rand(20..100), password: 'test'
   )
 end
