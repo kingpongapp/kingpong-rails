@@ -1,17 +1,21 @@
 PLAYERS CONTROLLER CODE
 
+DT WORKING MODEL
+		
+		rb file -  
 
-	DT WORKING MODEL
-require 'twitter'
+		client = Twitter::REST::Client.new do |config|
+  			config.consumer_key    = ENV["CONSUMER_KEY"]
+  			config.consumer_secret = ENV["CONSUMER_SECRET"]
+		end
 
-client = Twitter::REST::Client.new do |config|
-  config.consumer_key    = ENV["CONSUMER_KEY"]
-  config.consumer_secret = ENV["CONSUMER_SECRET"]
-end
+		@tweets = client.search("@kingpongapp", result_type: "recent")
 
-client.search("@kingpongapp", result_type: "recent").each do |tweet|
-  puts tweet.text
-end
+		html file - 
+
+		<% @tweets.each do |tweet| %> 
+			<p><%= tweet.text %></p>
+		<% end %>
 
 ==========================================================================================
 
