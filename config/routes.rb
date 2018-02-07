@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   delete '/session', to: 'sessions#destroy'
 
+  get '/', to: 'pages#show'
+
 end

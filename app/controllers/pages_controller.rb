@@ -4,4 +4,7 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def show
+  end
+
 end

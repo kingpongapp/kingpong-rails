@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       session[:player_id] = player.id
       redirect_to '/'
     else
-      render :home
+      redirect_to '/games'
     end
   end
 
@@ -16,4 +16,3 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 end
-
