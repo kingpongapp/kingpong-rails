@@ -1,8 +1,10 @@
 class GamesController < ApplicationController
 
   def index
-    @player = Player.includes(:PlayerGame)
     @player_games = PlayerGame.all
+    @player = Player.includes(:player_game)
+    binding.pry
+    
     @games = Game.all
     
 
