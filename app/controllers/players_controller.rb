@@ -6,7 +6,9 @@ class PlayersController < ApplicationController
 		player.name = params[:name]
 		@nickname = params[:nickname]
 		player.image_url = params[:image]
+		player.score = 200
 		player.save
+
 		render :welcome
 	end
 
