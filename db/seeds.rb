@@ -14,16 +14,18 @@
 Player.delete_all
 
 
-arr1 = ['mistyrose', 'pudding', 'byteme']
-arr2 = ['muffin', 'noodles', 'candy']
+name = ['Fouad', 'Anu', 'Robbie', 'Ross', 'Alex']
+nickname = ['muffin', 'noodles', 'candy', 'slicer', 'ponger', 'smashof', 'sponge']
+
 
 player = Player.new
-player.name = 
-player.email = 'ross.lillis@gmail.com'
+player.email = 'test@gmail.com'
+player.image_url
+player.score
 player.save
 
 20.times do
   Player.create(
-    title: "#{arr1.sample} #{arr2.sample}", user_id: user.id
+    name: "#{name.sample}", nickname: "#{nickname.sample}",
   )
 end
