@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../landing.css">
   </head>
   <body>
-    <header>
+    <header style="margin-bottom: 50px">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -36,7 +36,7 @@
       <!-- <label>Email</label> <input type="text" name="email"> <label>Password</label> <input type="password" name="password"> <button>Login</button> -->
     </header>
 
-    <hr>
+   
     <main>
       <div class="container">
         <div class="row">
@@ -46,7 +46,7 @@
           </div>
 
           <div class="col-4" style="padding-left: 40px;
-        font-size: 15px;">
+        font-size: 15px; border-left: 10px rgba(0, 0, 0, 0.2) solid">
             <form class="form-horizontal register" action="/players" method="post">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <h2>Register</h2>
