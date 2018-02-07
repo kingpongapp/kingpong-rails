@@ -13,14 +13,12 @@ DT WORKING MODEL
 
 		html file - 
 
-		<% @tweets.each do |tweet| %> 
-			<p><%= tweet.text %></p>
+	<div>
+		<% @tweets.take(10).each do |tweet| %> 
+			<ul class="twitterul">
+				<li class="twitterlist"><%= tweet.text %> <i class="fab fa-twitter"></i></li><br>	
+			</ul>
 		<% end %>
+	</div>	
 
 ==========================================================================================
-
-	INDEX.HTML.ERB
-
-		kingpongapp twitter WIDGET
-
-        <a class="twitter-timeline" href="https://twitter.com/KingPongApp?ref_src=twsrc%5Etfw">Tweets by KingPongApp</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
