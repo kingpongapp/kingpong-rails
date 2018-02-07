@@ -5,15 +5,15 @@ class PagesController < ApplicationController
   end
 
   def home
-    @players = Player.all
+    players = Player.all
     @playerRank = 0
 
-    # @topPlayers = players.find_by_score.limit(10)
+    # @topPlayers = Player.order('score DESC').limit(10)
     # print @topPlayers
 
-  # Player.order('score DESC').first(10).each do |player|
-  #   School.find_by_id(player.school_id)
-  # end
+   @topPlayers = Player.order('score DESC').each do |player|
+    player.find_by_score(player.score)
+  end
 
   end
 
