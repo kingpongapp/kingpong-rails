@@ -28,7 +28,7 @@
         <span class="navbar-text">
           <div class="logged-in">
           <% if logged_in? %>
-          <p style="float: left">Logged in as:
+          <p style="float: left"><span style="font-weight: bold;">Logged in as: </span>
             <%= current_user.email %></p>
             <form action="/session" method="post">
               <input type="hidden" name="_method" value="delete">
