@@ -7,6 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
-Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
-Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
+# Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
+# Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
+# Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
+Project.delete_all
+
+name = ['Fouad', 'Anu', 'Robbie', 'Ross', 'Alex']
+nickname = ['muffin', 'noodles', 'candy', 'slicer', 'ponger', 'smashoff', 'sponge']
+
+20.times do
+  Player.create(
+    name: name.sample, email: "test@gmail.com", nickname: nickname.sample, image_url: "https://images-na.ssl-images-amazon.com/images/I/41kbIruQrnL.jpg", score: rand(20..100), password: 'test'
+  )
+end

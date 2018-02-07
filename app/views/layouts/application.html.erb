@@ -20,10 +20,10 @@
             <a class="nav-link" href="/pages">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/players">Players</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Games</a>
+            <a class="nav-link" href="/games">Games</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Contact</a>
@@ -32,7 +32,7 @@
         <span class="navbar-text">
           <div class="logged-in">
           <% if logged_in? %>
-          <p style="float: left"><span style="font-weight: bold;">Logged in as: </span>
+          <p style="float: left; margin-bottom: 10px;"><span style="font-weight: bold;">Logged in as: </span>
             <%= current_user.email %></p>
             <form action="/session" method="post">
               <input type="hidden" name="_method" value="delete">
@@ -59,7 +59,7 @@
 
   <body>
     <%= yield %>
-    
+
   </body>
 
 </html>
