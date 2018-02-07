@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   get '/', to: 'pages#index'
 
-  get '/session', to: 'sessions#home'
+  get '/session', to: 'pages#show'
 
   post '/session', to: 'sessions#create'
 
   delete '/session', to: 'sessions#destroy'
 
-  get '/', to: 'pages#show'
+  get '/pages', to: 'pages#show'
 
 end
