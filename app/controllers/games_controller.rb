@@ -1,18 +1,43 @@
 class GamesController < ApplicationController
 
   def index
+    # @player = Player.where(id: PlayerGame.find(:player_id))
+    @player_games = PlayerGame.all
+    @games = Game.all
     
-  end
-  def create
-    players = %w(John Paul Ringo George)
 
-    Player.all.each do |player|
-      players.push(player)
+    if @player_games
     end
 
+  end
 
-    teams = RoundRobinTournament.schedule(players)
+  def create
+    players = []
+    Player.all.each do |player|
+      players.push(player.id)
+    end
 
+    draw = RoundRobinTournament.schedule(players)
+
+    draw.each do |round|
+      gm = Game.new
+      gm.save
+
+      idx = 0
+      round.each do |game|
+
+        playergame = PlayerGame.new
+        playergame.player_id = game[idx]
+        playergame.game_id = gm.id
+         if playergame.save
+         else
+          binding.pry
+         end
+        idx =+ 1
+
+      end
+      
+    end
     
     redirect_to action:index, id:1
   end
