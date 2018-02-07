@@ -11,14 +11,11 @@ class PlayersController < ApplicationController
 	end
 
 	def index
-		@players = Player.all
-		
-		
+		@players = Player.all	
 	end
 
 	def show
-		@player = Player.find(params[:id])
-		
+		@player = Player.find(params[:id])	
 	end
 
 end
