@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../landing.css">
   </head>
   <body>
-    <header style="margin-bottom: 50px">
+    <header>
       <div class="container">
         <div class="row">
           <div class="col">
@@ -36,7 +36,7 @@
       <!-- <label>Email</label> <input type="text" name="email"> <label>Password</label> <input type="password" name="password"> <button>Login</button> -->
     </header>
 
-   
+    <hr>
     <main>
       <div class="container">
         <div class="row">
@@ -46,19 +46,19 @@
           </div>
 
           <div class="col-4" style="padding-left: 40px;
-        font-size: 15px; border-left: 10px rgba(0, 0, 0, 0.2) solid">
-            <form class="form-horizontal register" action="/players" method="post">
+        font-size: 15px;">
+            <form class="form-horizontal register" action="/session" method="post">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <h2>Register</h2>
-              <label style="margin-bottom: 0px; margin-top: .9rem;">Name</label>
-              <input type="text" name="firstname" class="col-sm"><br>
-              <label style="margin-bottom: 0px; margin-top: .9rem;">Nickname</label>
+              <label>Name</label>
+              <input type="text" name="name" class="col-sm"><br>
+              <label>Nickname</label>
               <input type="text" name="nickname" class="col-sm">
-              <label style="margin-bottom: 0px; margin-top: .9rem;">Email Address</label>
+              <label>Email Address</label>
               <input type="email" name="email" class="col-sm">
-              <label style="margin-bottom: 0px; margin-top: .9rem;">Password</label>
+              <label>Password</label>
               <input type="password" name="password" class="col-sm">
-              <label style="margin-bottom: 0px; margin-top: .9rem;">Password (Confirm)</label>
+              <label>Password (Confirm)</label>
               <input type="password" name="password" class="col-sm">
               <label><input type="checkbox" name="">
                 I agree to play with extreme awesomeness.</label>

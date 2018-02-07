@@ -7,6 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
-Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
-Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
+# Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
+# Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
+# Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
+
+Player.delete_all
+
+
+arr1 = ['mistyrose', 'pudding', 'byteme']
+arr2 = ['muffin', 'noodles', 'candy']
+
+player = Player.new
+player.name = 
+player.email = 'ross.lillis@gmail.com'
+player.save
+
+20.times do
+  Player.create(
+    title: "#{arr1.sample} #{arr2.sample}", user_id: user.id
+  )
+end
