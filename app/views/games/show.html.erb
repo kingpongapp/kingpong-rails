@@ -1,1 +1,39 @@
 
+<% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
+
+<% binding.pry%>
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Acceptance</a>
+
+          <div class="acceptance-body">
+            <% players.each do |player| %>
+              <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-body text-success">
+                  <h5 class="card-title"><%=player.name%></h5>
+                  <p class="card-text"><%=player.score%></p>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                  <a href="#" class="btn btn-primary">Accept</a>
+                  <a href="#" class="btn btn-primary">Decline</a>
+                </div>
+              </div>
+            <% end %>
+           
+          </div>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Result</a>
+        <div class="result-body">
+          <a href="#" class="btn btn-primary">Claim win</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  
+</div>

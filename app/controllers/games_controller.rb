@@ -1,16 +1,7 @@
 class GamesController < ApplicationController
 
   def index
-    @player_games = PlayerGame.all
-    @player = Player.includes(:player_game)
-    binding.pry
-    
-    @games = Game.all
-    
-
-    if @player_games
-    end
-
+    @games = Game.includes(:players)
   end
 
   def create
@@ -27,20 +18,20 @@ class GamesController < ApplicationController
 
       idx = 0
       round.each do |game|
-
         playergame = PlayerGame.new
         playergame.player_id = game[idx]
         playergame.game_id = gm.id
          if playergame.save
          else
-          binding.pry
+          # Error Handling
          end
         idx =+ 1
-
-      end
-      
-    end
-    
+      end 
+    end   
     redirect_to action:index, id:1
+  end
+
+  def show
+    
   end
 end
