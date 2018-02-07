@@ -12,13 +12,23 @@
     <%idx = 0%>
     <% @games.each do |game|%>
       <div class="draw-row">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src=<%= @games[idx].players[0].image_url %> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= @games[idx].players[0].name %></h5>
+          </div>
+        </div>
         <% #binding.pry %>
-        <div><%= @games[idx].players[0].name %></div>
         <div>Vs</div>
-        <div><%= @games[idx].players[1].name %></div>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src=<%= @games[idx].players[1].image_url %> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= @games[idx].players[1].name %></h5>
+          </div>
+        </div>
         <div>
           <form action="/games/<%=game.id%>" method="get">
-            <button>Start Game</button>
+            <button class="btn btn-outline-primary">Start Game</button>
           </form>
         </div>
       </div>
