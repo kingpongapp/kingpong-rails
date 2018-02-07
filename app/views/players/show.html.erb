@@ -1,25 +1,36 @@
 
-<div class="main-block">
-  <h3><%= @player.name %></h3><h4><%= @player.score %></h4>
-  <button>Challenge Player</button>
-  <div class="bio-block">
-    <h4>BIO:</h4>
-    <p>this is to show bio paragraph</p>
+<div class="container">
+  <div class="main-block">
+    <h3 class="card-title"><%= @player.name %></h3><h4 class="card-title">Score: <%= @player.score %></h4>
+    <!-- <button>Challenge Player</button> -->
+    <img src="<%= @player.image_url %>" alt="">
+    <div class="bio-block">
+      <h4>BIO:</h4>
+      <p>this is to show bio paragraph</p>
+    </div>
+  </div>
+
+  <div class="side-block">
+    <p>Nickname: <%= @player.nickname %></p>
+      <% if @player.player_games.last.win%>
+        <% result = 'Won' %>
+      <% else %>
+        <% result = 'Lost' %>
+      <% end %>
+    <p>Last Performance: <%= result %>
+      </p>
+    <p>Games Played: <%= @player.player_games.count %></p>
+    <p>Games Won:</p>
   </div>
 </div>
 
-<div class="side-block">
-  <p>Nickname: <%= @player.nickname %></p>
-  <p>Last game winner: @player.play_game.last.winner</p>
-  <p>Games Played:</p>
-  <p>Games Won:</p>
-</div>
+<div class="container">
+  <div class="game-history">
+    <h4>Games History</h4>
+    <p><span>find all the game_id on Play_game table where player_id = play.id</span><span>if winner==player.id, display Won, else display lost</span><span>display date</span></p>
+  </div>
 
-<div class="game-history">
-  <h4>Games History</h4>
-  <p><span>find all the game_id on Play_game table where player_id = play.id</span><span>if winner==player.id, display Won, else display lost</span><span>display date</span></p>
-</div>
-
-<div class="comments-block">
-  <h4>Comments</h4>
+  <div class="comments-block">
+    <h4>Comments</h4>
+  </div>
 </div>
