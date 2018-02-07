@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     player = Player.find_by(email: params[:email])
     if player && player.authenticate(params[:password])
       session[:player_id] = player.id
-      render 'pages/show'
+      redirect_to '/pages'
     else
       redirect_to '/'
     end
