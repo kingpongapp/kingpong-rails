@@ -1,41 +1,26 @@
 var $rankings = $('.rankings');
+var $newTableRow = $('<tr>');
+var $newTableHeader = $('<th>').attr('scope', 'row');
+var $newTableData = $('<td>');
+var $newImageElem = $('<img>');
+var players = Player.all; //Need to point to players table/instance variable
 
 
-
-response.Search.forEach(function(player){
-  var $newTableRow = $('<tr>');
-  var $newTableHeader = $('<th>').attr('scope', 'row');
-  var $newTableData = $('<td>');
-  var $newImageElem = $('<img>');
-
+// Loops through players table and creates DOM elements for 10 ten ranked players
+players.forEach(function(player){
+  var playerRank = 1;
   $newTableRow.append($newTableHeader);
   $newTableRow.append($newTableData);
   $newTableRow.append($newImageElem);
-  $newTableData.text(player.name);
-  $newImageElem.attr('src', player.image);
+  $newTableHeader.text(playerRank);
+  $newTableData.text(player.nickname);
+  $newImageElem.attr('src', player.image_url);
   $rankings.append($newTableRow);
+  playerRank++;
 });
 
-// $('button').on('click', function(){
-//   var $newMovieName = $('input').val();
-//   var options = {
-//     url: "http://www.omdbapi.com/?apikey=2f6435d9&s=" + $newMovieName
-//   };
 
-  // $('.container').empty();
+games.forEach(function(game){
 
-//   $.ajax(options).done(function(response){
-//     response.Search.forEach(function(movie){
-//       var $newSectElem = $('<section>');
-//       var $newH2Elem = $('<h2>');
-//       var $newImageElem = $('<img>');
-//
-//       $newSectElem.append($newH2Elem);
-//       $newSectElem.append($newImageElem);
-//       $newH2Elem.text(movie.Title);
-//       $newImageElem.attr('src', movie.Poster);
-//       $container.append($newSectElem);
-//       $('input').val('');
-//     });
-//   });
-// });
+
+});
