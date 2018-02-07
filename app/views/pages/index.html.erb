@@ -52,11 +52,11 @@
 
         <div class="col-4" style="padding-left: 40px;
         font-size: 15px;">
-          <form class="form-horizontal register" action="/session" method="post">
+          <form class="form-horizontal register" action="/players" method="post">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <h2>Register</h2>
             <label>Name</label>
-            <input type="text" name="firstname" class="col-sm"><br>
+            <input type="text" name="name" class="col-sm"><br>
             <label>Nickname</label>
             <input type="text" name="nickname" class="col-sm">
             <label>Email Address</label>
@@ -65,7 +65,9 @@
             <input type="password" name="password" class="col-sm">
             <label>Password (Confirm)</label>
             <input type="password" name="password" class="col-sm">
-            <label><input type="checkbox" name="">
+            <label>Image</label>
+            <input type="text" name="image" class="col-sm">
+            <label><input type="checkbox" name="">              
               I agree to play with extreme awesomeness.</label>
             <input type="submit" value="Sign up" class="btn btn-primary pull-right">
             <div class="clearfix"></div>
