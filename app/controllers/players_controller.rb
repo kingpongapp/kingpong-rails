@@ -6,9 +6,7 @@ class PlayersController < ApplicationController
 		player.name = params[:name]
 		@nickname = params[:nickname]
 		player.image_url = params[:image]
-		player.score = 200
-		player.save
-
+		player.score = 100		
 		render :welcome
 	end
 
@@ -17,11 +15,12 @@ class PlayersController < ApplicationController
 	end
 
 	def show
-		@player = Player.find(params[:id])	
-	end
 
-  	def api_rating
-    	render json: {info: 'receive rating'}
-  	end
+		@player = Player.find(params[:id])
+  end
+
+  def api_rating
+    render json: {info: 'receive rating'}
+  end
 
 end

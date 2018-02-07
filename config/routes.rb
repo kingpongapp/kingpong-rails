@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   delete '/session', to: 'sessions#destroy'
 
-  get '/pages', to: 'pages#show'
+  get '/pages', to: 'pages#home'
 
   get '/api/players', to: 'players#api_rating'
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <title>King Pong</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,10 +21,10 @@
             <a class="nav-link" href="/pages">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/players">Players</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Games</a>
+            <a class="nav-link" href="/games">Games</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Contact</a>
@@ -32,7 +33,7 @@
         <span class="navbar-text">
           <div class="logged-in">
           <% if logged_in? %>
-          <p style="float: left"><span style="font-weight: bold;">Logged in as: </span>
+          <p style="float: left; margin-bottom: 10px;"><span style="font-weight: bold;">Logged in as: </span>
             <%= current_user.email %></p>
             <form action="/session" method="post">
               <input type="hidden" name="_method" value="delete">
@@ -59,7 +60,7 @@
 
   <body>
     <%= yield %>
-    
+
   </body>
 
 </html>
