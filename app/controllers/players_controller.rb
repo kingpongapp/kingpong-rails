@@ -4,8 +4,8 @@ class PlayersController < ApplicationController
 		player.email = params[:email]
 		player.password = params[:password]
 		player.name = params[:name]
+		player.nickname = params[:nickname]
 		@nickname = params[:nickname]
-		player.image_url = params[:image]
 		player.score = 100
 		player.save		
 		render :welcome
@@ -16,8 +16,8 @@ class PlayersController < ApplicationController
 	end
 
 	def show
-
 		@player = Player.find(params[:id])
+		@player_rank = Player.order('score DESC').index(@player) + 1
   end
 
   def api_rating
