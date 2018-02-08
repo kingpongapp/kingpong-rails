@@ -1,7 +1,7 @@
 <div class="index-wrapper">
   <% if @games.length == 0%>
     <form action='/games' method="post">
-      <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <button>Generate Draw</button>
     </form>
   <% end %>
@@ -35,8 +35,5 @@
         <%idx += 1%>
       <%end %>
     <% end %>
-  </div> 
-</div> 
-
-
-
+  </div>
+</div>
