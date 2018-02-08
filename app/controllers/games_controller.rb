@@ -38,12 +38,13 @@ class GamesController < ApplicationController
   def update
 
     playergame = PlayerGame.where(["game_id = ? and player_id = ?", params[:game_id], session[:player_id]])
-    playergame.win = true
+    playergame.first.win = "true"
     
-    if playergame.save
+    if playergame.first.save
       
     else
       # Error Handling
     end
+    binding.pry
   end
 end

@@ -40,10 +40,10 @@
         <a class="nav-link active" href="#">Result</a>
         <div class="result-body">
           <form action="/games/<%=params[:id]%>" method="post">
-          <input type="hidden" name="_method" value="put">
-          <input type="hidden" name="game_id" value="<%=params[:id]%>">
-          <input type="hidden" name="authentication_token" value="form_authentication_token">
-          <a href="#" class="btn btn-primary">Claim win</a>
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="game_id" value="<%=params[:id]%>">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <button href="#" class="btn btn-primary">Claim win</button>
           </form>
         </div>
       </li>
