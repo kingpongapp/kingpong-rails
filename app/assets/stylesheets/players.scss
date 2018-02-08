@@ -11,7 +11,7 @@
 }
 
 .player-card:hover {
-  transform: translateY(0.3em);
+  transform: translateY(-0.3em);
 }
 
 .player-card header {
@@ -47,22 +47,20 @@
 .star {
   user-select: none;
   -webkit-user-select: none;
-  position: absolute;
-  display: none;
+  // position: absolute;
+  // display: none;
   top: 5px;
   right: 5px;
-  color: white;
+  color: silver;
   font-size: 3em;
   cursor: pointer;
   transition: .5s;
   line-height: 1;  
 }
 
-.card-image:hover .star {
+.player-card:hover .star {
   display: block;
-}
-.star:hover {
-  color: yellow;
+  color: gold;
 }
 
 @media (min-width: 36em) {

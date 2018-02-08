@@ -3,12 +3,12 @@
   <a class="card player-card" href="/players/<%= player.id %>">
     <header class="content">
       <h3 class="card-title"><%= player.name %></h3> 
-      <div class="card-score">Score: <%= player.score %></div>
+      <div class="card-score">Points: <%= player.score %></div>
     </header>
 
     <div class="card-image">
       <img class="card-img-top" src="<%= player.image_url %>" alt="">
-      <span class="star">&#9733;</span>
+      
     </div>
 
     <div class="card-body">
@@ -18,7 +18,7 @@
 
     <footer class="content">
       <p>
-        <span class="star-count">12</span> stars
+        <span class="star">&#9733;</span>
       </p>
     </footer>
   </a>
