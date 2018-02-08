@@ -1,9 +1,23 @@
-<% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
+<% game = Game.find(params[:id]) %>
 
-  <% #binding.pry%>
+  <div class="show-wrapper">
+  <% if game.completed == true %>
+    <% winner = PlayerGame.find_by(game_id: params[:id], win: true) %>
+    <% winner_player = Player.find(winner.player_id)%>
+    <div class="winner">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=<%= winner_player.image_url %> alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"> <%= winner_player.name %> </p>
+        </div>
+      </div>
+    </div>
+  <% else %>
     <div class="show">
+      <% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
       <div class="players">
         <% players.each do |player| %>
+          <% playergame = PlayerGame.find_by(player_id: player.id) %>
           <div class="card border-success mb-3" style="min-width: 18rem;">
             <div class="card-body text-success">
               <h5 class="card-title">
@@ -15,26 +29,47 @@
               </div>
             </div>
             <div class="card-footer bg-transparent border-success">
-              <a href="#" class="btn btn-outline-primary accept-btn">Accept</a>
-              <a href="#" class="btn btn-outline-primary decline-btn">Decline</a>
-              <div style="color:LightSeaGreen ">
-                <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
-              </div>
-              <div style="color:LightCoral  ">
-                <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
-              </div>
+              
+              <% if playergame.accepted == true %>
+                <div style="color:LightSeaGreen ">
+                  <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
+                </div>
+              <% else %>
+                <form action="/games/<%=params[:id]%>" method="post">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  <input type="hidden" name="_method" value="put">
+                  <input type="hidden" name="acceptance" value=true>
+                  <input type="hidden" name="player_id" value=<%=player.id%>>
+                <button class="btn btn-outline-primary accept-btn">Accept</button>
+              </form>
+              <% end %>
+              
+              <% if playergame.accepted == false %>
+                <div style="color:LightCoral  ">
+                  <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
+                </div>
+              <% else %>
+                <form action="/games/<%=params[:id]%>" method="post">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  <input type="hidden" name="_method" value="put">
+                  <input type="hidden" name="acceptance" value=false>
+                  <input type="hidden" name="player_id" value=<%=player.id%>>
+                  <button class="btn btn-outline-primary decline-btn">Decline</button>
+                </form>
+              <% end %>
             </div>
           </div>
-          <% end %>
+        <% end %>
       </div>
       <div class="claim">
         <form action="/games/<%=params[:id]%>" method="post">
           <input type="hidden" name="_method" value="put">
-          <input type="hidden" name="game_id" value="<%=params[:id]%>">
-          <input type="hidden" name="player_1" value="<%=params[:id]%>">
-          <input type="hidden" name="player_2" value="<%=params[:id]%>">
+          <input type="hidden" name="winner" value="winner">
+      
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <button href="#" class="btn btn-primary">Claim win</button>
+          <button href="#" class="btn btn-primary">Claim Win</button>
         </form>
       </div>
     </div>
+  <% end %>
+  </div>

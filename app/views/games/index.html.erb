@@ -22,7 +22,7 @@
             </div>
           </div>
           <% #binding.pry %>
-          <div class="vs">Vs</div>
+          <div class="vs">VS</div>
           <div class="card second" style="width: 18rem;">
             <img class="card-img-top" src=<%= @games[idx].players[1].image_url %> alt="Card image cap">
             <div class="card-body">
@@ -31,11 +31,16 @@
             </div>
           </div>
           <div>
-            <form action="/games/<%=game.id%>" method="get">
-              <input type="hidden" name="player_1" value="<%player_1%>">
-              <input type="hidden" name="player_2" value="<%player_2%>">
-              <button class="btn btn-outline-primary">Start Game</button>
-            </form>
+           
+            <% if @games[idx].completed == true %>
+              <form action="/games/<%=game.id%>" method="get">
+                <button class="btn btn-outline-primary">View Winner</button>
+              </form>
+            <% else %>
+              <form action="/games/<%=game.id%>" method="get">
+                <button class="btn btn-outline-primary">Start Game</button>
+              </form>
+            <% end %>
           </div>
         </div>
         <%idx += 1%>

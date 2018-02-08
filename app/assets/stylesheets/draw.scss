@@ -6,7 +6,7 @@
 }
 
 .index-wrapper .draw-row:hover {
-  background-color: rgba(176, 171, 171, 0.413);
+  background-color: rgba(176, 171, 171, 0.201);
   transition-timing-function: ease;
 }
 
@@ -20,11 +20,11 @@
 }
 
 .index-wrapper .draw-row .card.first {
-  border-right: 5px solid lightcoral;
+  border-right: 5px solid rgba(26, 104, 147, 0.769);
 }
 
 .index-wrapper .draw-row .card.second {
-  border-right: 5px solid lightgreen;
+  border-right: 5px solid rgba(197, 237, 55, 0.769);
 }
 
 .index-wrapper .draw-row .card .card-title {
@@ -42,10 +42,11 @@
 }
 
 .index-wrapper .draw-row .vs {
-  background-color: lightseagreen;
+  background-color: rgba(12, 40, 74, 0.824);
   padding: 1em;
   border-radius: 2em;
-  color: white;
+  color: rgba(222, 116, 34, 0.81);
+  font-weight: 800;
 }
 
 .index-wrapper .generate {
@@ -70,13 +71,29 @@
 
 .show .players .score {
   font-size: 2em;
-  background-color: rgba(8, 228, 252, 0.783);
+  border: 2px solid rgba(8, 228, 252, 0.783);
   text-align: center;
-  color: white;
+  color: rgba(8, 228, 252, 0.783);
   padding: 0.5em;
 }
 
 .show .claim .btn {
   padding: 0.5em 1em;
   font-size: 2em;
+  background-color: rgba(12, 40, 74, 0.824);
+  color: rgba(222, 116, 34, 0.81);
+  border: 2px solid rgba(222, 116, 34, 0.81);
+  font-weight: 800;
+}
+.show .claim .btn:hover {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  background-color: rgba(222, 116, 34, 0.81);
+  color: rgba(12, 40, 74, 0.824);
+  border: 2px solid rgba(12, 40, 74, 0.824);
+  font-weight: 800;
+}
+
+.show-wrapper .winner {
+  padding: 25px;
 }
