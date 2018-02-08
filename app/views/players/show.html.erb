@@ -1,17 +1,20 @@
 
 <div class="container">
   <div class="main-block">
-    <h3 class="card-title"><%= @player.name %></h3><h4 class="card-title">Points: <%= @player.score %></h4>
-    <!-- <button>Challenge Player</button> -->
+    <h2 class="card-title"><%= @player.name %>  <span class="badge badge-secondary"><%= @player.score %> points</span></h2>
     <img src="<%= @player.image_url %>" alt="">
-    <div class="bio-block">
-      <h4>BIO:</h4>
-      <p>this is to show bio paragraph</p>
-    </div>
+    <input style="width: 80%;" type="text" placeholder="<%= @player.image_url %>">
   </div>
 
   <div class="side-block">
-    <p>Nickname: <%= @player.nickname %></p>
+    <p style="font-size: 40px;">Ranking: <%= @player_rank %></p>
+    <h4>Nickname: 
+      <input type="text" placeholder="<%= @player.nickname %>">
+    </h4>
+    <div class="bio-block">
+      <h4>BIO</h4>
+      <textarea name="body" id="" cols="30" rows="5">Your BIO to be displayed here.</textarea>
+    </div>
     <p>Member Since: <%= @player.created_at.to_s.slice(0,10) %></p>
     <% if @player.player_games.last %>
       <% if @player.player_games.last.win%>
@@ -23,6 +26,9 @@
     <p>Last Performance: <%= result %></p>
     <p>Games Played: <%= @player.player_games.count %></p>
     <p>Games Won:</p>
+    <label for="file">Profile Picture Upload</label>
+    <input type="file" name="image_url">
+    <button class="btn btn-primary" style="margin-top: 20px;">Update Profile</button>
   </div>
 </div>
 
@@ -30,9 +36,5 @@
   <div class="game-history">
     <h4>Games History</h4>
     <p><span>find all the game_id on Play_game table where player_id = play.id</span><span>if winner==player.id, display Won, else display lost</span><span>display date</span></p>
-  </div>
-
-  <div class="comments-block">
-    <h4>Comments</h4>
   </div>
 </div>

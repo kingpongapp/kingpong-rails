@@ -2,8 +2,7 @@
   <% @players.each do |player| %>
   <a class="card player-card" href="/players/<%= player.id %>">
     <header class="content">
-      <h3 class="card-title"><%= player.name %></h3> 
-      <div class="card-score">Points: <%= player.score %></div>
+      <h3 class="card-title"><%= player.name %><span class="badge badge-secondary" style="float: right;"><%= player.score %> points</span></h3> 
     </header>
 
     <div class="card-image">
