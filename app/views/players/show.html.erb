@@ -3,13 +3,13 @@
   <div class="main-block">
     <h2 class="card-title"><%= @player.name %>  <span class="badge badge-secondary"><%= @player.score %> points</span></h2>
     <img src="<%= @player.image_url %>" alt="">
-    <input style="width: 80%;" type="text" placeholder="<%= @player.image_url %>">
+    <input id="image_input" name="image_url" style="width: 80%;" type="text" value="<%= @player.image_url %>" placeholder="<%= @player.image_url %>">
   </div>
 
   <div class="side-block">
     <p style="font-size: 40px;">Ranking: <%= @player_rank %></p>
     <h4>Nickname: 
-      <input type="text" placeholder="<%= @player.nickname %>">
+      <input id="nickname_input" name="nickname" type="text" value="<%= @player.nickname %>" placeholder="<%= @player.nickname %>">
     </h4>
     <div class="bio-block">
       <h4>BIO</h4>
@@ -27,8 +27,8 @@
     <p>Games Played: <%= @player.player_games.count %></p>
     <p>Games Won:</p>
     <label for="file">Profile Picture Upload</label>
-    <input type="file" name="image_url">
-    <button class="btn btn-primary" style="margin-top: 20px;">Update Profile</button>
+    <input type="file" >
+    <button id="update_btn" class="btn btn-primary" style="margin-top: 20px;">Update Profile</button>
   </div>
 </div>
 
@@ -38,3 +38,39 @@
     <p><span>find all the game_id on Play_game table where player_id = play.id</span><span>if winner==player.id, display Won, else display lost</span><span>display date</span></p>
   </div>
 </div>
+
+<script>
+$(document).ready(function () {
+  $('#update_btn').click(function() {    
+    var $nickname = $('#nickname_input')
+    var $image = $('#image_input')
+    console.log ($nickname.val())
+    console.log ($image.val())
+
+    $.ajax({
+      type: 'PUT',
+      url: '/api/players',
+      data: { nickname: $nickname.val(), image_url: $image.val() },
+      success: function(res){
+        console.log(res)
+        $.ajax({
+          type: 'GET',
+          url: '/api/players/' + <%= @player.id %>,
+          success: function(res){
+            console.log(res)
+            $('#image_input').attr('src', res.image_url)
+          }
+        })
+      },
+      error: function() {
+        alert('failed to update')
+      }
+    });
+    
+
+  });
+});
+
+
+
+</script>
