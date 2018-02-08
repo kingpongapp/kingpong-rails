@@ -11,6 +11,7 @@
   </div>
 
   <div class="side-block">
+    <p>Ranking: <%= @player_rank %></p>
     <p>Nickname: <%= @player.nickname %></p>
     <p>Member Since: <%= @player.created_at.to_s.slice(0,10) %></p>
     <% if @player.player_games.last %>
