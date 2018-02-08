@@ -1,4 +1,4 @@
-# King Pong
+#King Pong
 
 King Pong is an application designed to provide structured gameplay for recreational table tennis players.
 
@@ -6,7 +6,22 @@ The landing page, it's design drawing inspiration from twitter/facebook, provide
 
 New user upon registration will be directed to a welcome page from which they can click through to the main home page. Existing players will go to the home page upon successfully logging in.
 
+##Home page
+
+Contains the players leaderboard with the top 10 players and their scores.
+
+A 'KingPongApp' twitter feed which updates when this handle is used.
+
+##Player pool and player details
 
 
-##Extra features
+##Game draw
+
+
+##Tech used
+
+
+###Extra features
 * Ability to choose between different types of tournaments.
+* Email notifications
+*
