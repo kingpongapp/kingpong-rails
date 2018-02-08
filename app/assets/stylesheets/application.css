@@ -15,51 +15,51 @@
  */
 
 h1 {
-	color: green;
+  color: green;
 }
 
 .main {
-	border:;
-	width: 90%;
-	text-align: center;
-	display: -webkit-flex; /* Safari */
-   flex-wrap: wrap; /* Safari 6.1+ */
-   display: flex;
-   flex-wrap: wrap;
+  border: ;
+  width: 90%;
+  text-align: center;
+  display: -webkit-flex; /* Safari */
+  flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .welcomemain {
-	width: 40%;
-	float: left;
-	padding-left: 60px;
-	padding-top: 200px;
-	padding-right: 60px;
-	font-size: 20px;
+  width: 40%;
+  float: left;
+  padding-left: 60px;
+  padding-top: 200px;
+  padding-right: 60px;
+  font-size: 20px;
 }
 
-.welcomeimage{
-	height: 100%;
-	width: 40%;
-	float: right;
-	object-fit: cover;
-	padding-left: 40px;
-	border-left: 10px rgba(0, 100, 0, 0.2) solid;
+.welcomeimage {
+  height: 100%;
+  width: 40%;
+  float: right;
+  object-fit: cover;
+  padding-left: 40px;
+  border-left: 10px rgba(0, 100, 0, 0.2) solid;
 }
 
 .homebutton {
-	color: green;
-	font-size: 20px;
-	border-radius: 20px;
+  color: green;
+  font-size: 20px;
+  border-radius: 20px;
 }
 
 .twitterlist {
-	background-color: rgb(29, 202, 255);
-	border-radius: 20px;
-	height: 35px;
-	font-style: bold;
-	font-size: 20px;
+  background-color: rgb(29, 202, 255);
+  border-radius: 20px;
+  height: 35px;
+  font-style: bold;
+  font-size: 20px;
 }
 
 .twitterurl {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
