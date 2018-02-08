@@ -52,20 +52,20 @@
           <tr>
             <th scope="col">Rank</th>
             <th scope="col"></th>
+            <th scope="col">Name</th>
             <th scope="col">Nickname</th>
             <th scope="col">Score</th>
           </tr>
         </thead>
         <tbody class="rankings">
           <% @topPlayers.each do |player| %>
-          <!-- <% while @playerRank < 10 do %> -->
-              <tr>
-                <th scope="row"><%= @playerRank += 1 %></th>
-                <td><img src="<%= player.image_url %>" style="height: 35px; width: 35px;"></td>
-                <td><%= player.nickname %></td>
-                <td><%= player.score %></td>
-              </tr>
-            <!-- <% end %> -->
+            <tr>
+              <th scope="row"><%= @playerRank += 1 %></th>
+              <td><img src="<%= player.image_url %>" style="height: 35px; width: 35px;"></td>
+              <td><%= player.name %></td>
+              <td><%= player.nickname %></td>
+              <td><%= player.score %></td>
+            </tr>
           <% end %>
         </tbody>
       </table>
