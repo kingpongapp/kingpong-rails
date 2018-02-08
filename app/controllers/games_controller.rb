@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  include PlayerRating
 
   def index
     @games = Game.includes(:players)
@@ -36,15 +37,25 @@ class GamesController < ApplicationController
   end
 
   def update
-
+    # Update: Winner info
     playergame = PlayerGame.where(["game_id = ? and player_id = ?", params[:game_id], session[:player_id]])
-    playergame.first.win = "true"
+    playergame.first.win = true
     
-    if playergame.first.save
-      
+    parse_response = get_rating
+    playergame.first.score = parse_response[0]
+    if playergame.first.save  
     else
       # Error Handling
     end
-    binding.pry
+   
+    
+    # Update: Loser info
+    playergame = PlayerGame.where(["game_id = ? and player_id != ?", params[:game_id], session[:player_id]])
+    playergame.first.win = false
+    playergame.first.score = parse_response[1]
+    if playergame.first.save  
+    else
+      # Error Handling
+    end
   end
 end

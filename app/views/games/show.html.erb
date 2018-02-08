@@ -1,55 +1,40 @@
-
 <% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
 
-<% #binding.pry%>
-<div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Acceptance</a>
+  <% #binding.pry%>
+    <div class="show">
+      <div class="players">
+        <% players.each do |player| %>
+          <div class="card border-success mb-3" style="min-width: 18rem;">
+            <div class="card-body text-success">
+              <h5 class="card-title">
+                <%=player.name%>
+              </h5>
 
-          <div class="acceptance-body">
-            <% players.each do |player| %>
-              <div class="card border-success mb-3" style="max-width: 18rem;">
-                <div class="card-body text-success">
-                  <h5 class="card-title"><%=player.name%></h5>
-
-                  <div>
-                    <i class="fas fa-certificate fa-5x" style="color:LemonChiffon"></i>
-                    <p class="card-text"><%=player.score%>
-                    </p>
-                  </div>
-                </div>
-                <div class="card-footer bg-transparent border-success">
-                  <a href="#" class="btn btn-outline-primary accept-btn">Accept</a>
-                  <a href="#" class="btn btn-outline-primary decline-btn">Decline</a>
-                  <div style="color:LightSeaGreen ">
-                    <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
-                  </div>
-                  <div style="color:LightCoral  ">
-                    <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
-                  </div>
-                </div>
+              <div class="score">
+                <%=player.score%>
               </div>
-            <% end %>
-           
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a href="#" class="btn btn-outline-primary accept-btn">Accept</a>
+              <a href="#" class="btn btn-outline-primary decline-btn">Decline</a>
+              <div style="color:LightSeaGreen ">
+                <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
+              </div>
+              <div style="color:LightCoral  ">
+                <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
+              </div>
+            </div>
           </div>
-
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Result</a>
-        <div class="result-body">
-          <form action="/games/<%=params[:id]%>" method="post">
-            <input type="hidden" name="_method" value="put">
-            <input type="hidden" name="game_id" value="<%=params[:id]%>">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <button href="#" class="btn btn-primary">Claim win</button>
-          </form>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-
-  
-</div>
+          <% end %>
+      </div>
+      <div class="claim">
+        <form action="/games/<%=params[:id]%>" method="post">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="game_id" value="<%=params[:id]%>">
+          <input type="hidden" name="player_1" value="<%=params[:id]%>">
+          <input type="hidden" name="player_2" value="<%=params[:id]%>">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <button href="#" class="btn btn-primary">Claim win</button>
+        </form>
+      </div>
+    </div>
