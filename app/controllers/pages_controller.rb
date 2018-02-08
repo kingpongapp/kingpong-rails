@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   def home
     @playerRank = 0
     @topPlayers = Player.order('score DESC').limit(10)
+
+    
   end
 
 end
