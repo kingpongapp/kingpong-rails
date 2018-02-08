@@ -34,21 +34,19 @@
                 <div style="color:LightSeaGreen ">
                   <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
                 </div>
-              <% else %>
-                <form action="/games/<%=params[:id]%>" method="post">
-                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input type="hidden" name="_method" value="put">
-                  <input type="hidden" name="acceptance" value=true>
-                  <input type="hidden" name="player_id" value=<%=player.id%>>
-                <button class="btn btn-outline-primary accept-btn">Accept</button>
-              </form>
-              <% end %>
-              
-              <% if playergame.accepted == false %>
+              <% elsif playergame.accepted == false %>
                 <div style="color:LightCoral  ">
                   <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
                 </div>
               <% else %>
+                 <form action="/games/<%=params[:id]%>" method="post">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  <input type="hidden" name="_method" value="put">
+                  <input type="hidden" name="acceptance" value=true>
+                  <input type="hidden" name="player_id" value=<%=player.id%>>
+                  <button class="btn btn-outline-primary decline-btn">Accept</button>
+                </form>
+
                 <form action="/games/<%=params[:id]%>" method="post">
                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                   <input type="hidden" name="_method" value="put">
@@ -57,6 +55,7 @@
                   <button class="btn btn-outline-primary decline-btn">Decline</button>
                 </form>
               <% end %>
+              
             </div>
           </div>
         <% end %>
