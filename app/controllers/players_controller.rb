@@ -16,7 +16,6 @@ class PlayersController < ApplicationController
 	end
 
 	def show
-
 		@player = Player.find(params[:id])
 		@player_rank = Player.order('score DESC').index(@player) + 1
   end
