@@ -26,22 +26,22 @@ class GamesController < ApplicationController
           # Error Handling
          end
         idx =+ 1
-      end 
-    end   
-    redirect_to action:"index" 
+      end
+    end
+    redirect_to action:"index"
   end
 
   def show
-    
+
   end
 
   def update
 
     playergame = PlayerGame.where(["game_id = ? and player_id = ?", params[:game_id], session[:player_id]])
     playergame.win = true
-    
+
     if playergame.save
-      
+
     else
       # Error Handling
     end
