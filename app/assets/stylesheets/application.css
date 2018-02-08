@@ -53,14 +53,15 @@ h1 {
 }
 
 .twitterlist {
-  background-color: rgb(29, 202, 255);
-  border-radius: 20px;
-  height: 35px;
-  font-style: bold;
-  font-size: 15px;
+	background-color: rgb(29, 202, 255);
+	border-radius: 20px;
+	font-size: 20px;
+	font-style: bold;
 }
 
 .twitterurl {
-  margin-bottom: 0px;
-  padding-left: 0px;
+	background-color: rgb(29, 202, 255);
+	margin-bottom: 0px;
+	height: 20%;
 }
+
