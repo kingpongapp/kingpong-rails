@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="main-block">
-    <h3 class="card-title"><%= @player.name %></h3><h4 class="card-title">Score: <%= @player.score %></h4>
+    <h3 class="card-title"><%= @player.name %></h3><h4 class="card-title">Points: <%= @player.score %></h4>
     <!-- <button>Challenge Player</button> -->
     <img src="<%= @player.image_url %>" alt="">
     <div class="bio-block">
@@ -12,13 +12,15 @@
 
   <div class="side-block">
     <p>Nickname: <%= @player.nickname %></p>
+    <p>Member Since: <%= @player.created_at.to_s.slice(0,10) %></p>
+    <% if @player.player_games.last %>
       <% if @player.player_games.last.win%>
         <% result = 'Won' %>
       <% else %>
         <% result = 'Lost' %>
       <% end %>
-    <p>Last Performance: <%= result %>
-      </p>
+    <% end %>
+    <p>Last Performance: <%= result %></p>
     <p>Games Played: <%= @player.player_games.count %></p>
     <p>Games Won:</p>
   </div>
