@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+
+
 	def create
 		player = Player.new
 		player.email = params[:email]
@@ -7,12 +9,13 @@ class PlayersController < ApplicationController
 		player.nickname = params[:nickname]
 		@nickname = params[:nickname]
 		player.score = 100
-		player.save		
+		player.save
 		render :welcome
 	end
 
 	def index
 		@players = Player.all
+		render layout: false
 	end
 
 	def show
