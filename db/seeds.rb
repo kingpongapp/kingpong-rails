@@ -10,7 +10,7 @@
 # Player.create(name: 'Ross', email: 'xyz@gmail.com', password: 'xyz')
 # Player.create(name: 'Anu', email: 'abc@gmail.com', password: 'abc')
 # Player.create(name: 'Rob', email: '123@gmail.com', password: '123')
-Project.delete_all
+Player.delete_all
 
 name = ['Fouad', 'Anu', 'Robbie', 'Ross', 'Alex']
 nickname = ['muffin', 'noodles', 'candy', 'slicer', 'ponger', 'smashoff', 'sponge']
