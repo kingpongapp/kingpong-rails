@@ -15,7 +15,6 @@ class GamesController < ApplicationController
     draw.each do |round|
       gm = Game.new
       gm.save
-
       idx = 0
       round.each do |game|
         playergame = PlayerGame.new

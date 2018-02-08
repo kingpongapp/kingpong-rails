@@ -1,24 +1,12 @@
-# README
+# King Pong
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+King Pong is an application designed to provide structured gameplay for recreational table tennis players.
 
-Things you may want to cover:
+The landing page, it's design drawing inspiration from twitter/facebook, provides existing users a login and the ability for new users to register.
 
-* Ruby version
+New user upon registration will be directed to a welcome page from which they can click through to the main home page. Existing players will go to the home page upon successfully logging in.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Extra features
+* Ability to choose between different types of tournaments.

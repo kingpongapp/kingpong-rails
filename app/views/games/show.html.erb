@@ -1,7 +1,6 @@
 
 <% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
 
-<% #binding.pry%>
 <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs justify-content-center">
@@ -26,13 +25,13 @@
                   <div style="color:LightSeaGreen ">
                     <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
                   </div>
-                  <div style="color:LightCoral  ">
+                  <div style="color:LightCoral">
                     <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
                   </div>
                 </div>
               </div>
             <% end %>
-           
+
           </div>
 
       </li>
@@ -51,5 +50,5 @@
   </div>
 
 
-  
+
 </div>
