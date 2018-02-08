@@ -33,4 +33,16 @@ class PlayersController < ApplicationController
     render json: {info: parse_response}
   end
 
+  def api_update
+  	player = Player.find_by(id: session[:player_id])
+  	player.nickname = params[:nickname]
+  	player.image_url = params[:image_url]
+  	player.save
+  	render json: player
+  end
+
+  def api_show
+  	player = Player.find(params[:id])
+  	render json: player
+  end
 end
