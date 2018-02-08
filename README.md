@@ -10,7 +10,7 @@ New user upon registration will be directed to a welcome page from which they ca
 
 Contains the players leaderboard with the top 10 players and their scores.
 
-A 'KingPongApp' twitter feed which updates when this handle is used.
+A 'KingPongApp' twitter feed which updates when this handle is used in peoples tweets.
 
 ##Player pool and player details
 
@@ -21,7 +21,8 @@ A 'KingPongApp' twitter feed which updates when this handle is used.
 ##Tech used
 
 
-###Extra features
+###Extra features 
 * Ability to choose between different types of tournaments.
-* Email notifications
+* Support for multiple arenas/locations.
+* Email notifications/updates of results.
 *
