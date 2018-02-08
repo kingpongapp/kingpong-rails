@@ -12,13 +12,15 @@
 
   <div class="side-block">
     <p>Nickname: <%= @player.nickname %></p>
+    <p>Member Since: <%= @player.created_at.to_s.slice(0,10) %></p>
+    <% if @player.player_games.last %>
       <% if @player.player_games.last.win%>
         <% result = 'Won' %>
       <% else %>
         <% result = 'Lost' %>
       <% end %>
-    <p>Last Performance: <%= result %>
-      </p>
+    <% end %>
+    <p>Last Performance: <%= result %></p>
     <p>Games Played: <%= @player.player_games.count %></p>
     <p>Games Won:</p>
   </div>
