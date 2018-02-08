@@ -28,13 +28,22 @@ h1 {
   flex-wrap: wrap;
 }
 
+.main .welcomeimage img {
+   width: 500px;
+   height: 500px;
+}
+
 .welcomemain {
   width: 40%;
   float: left;
   padding-left: 60px;
-  padding-top: 200px;
+  padding-top: 60px;
   padding-right: 60px;
   font-size: 20px;
+}
+
+.fun-msg {
+  font-weight: bold;
 }
 
 .welcomeimage {
@@ -44,6 +53,10 @@ h1 {
   object-fit: cover;
   padding-left: 40px;
   border-left: 10px rgba(0, 100, 0, 0.2) solid;
+}
+
+.welcomeimage img {
+  padding-top: 20%;
 }
 
 .homebutton {
@@ -64,4 +77,3 @@ h1 {
 	margin-bottom: 0px;
 	height: 20%;
 }
-

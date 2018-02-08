@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
 		player.nickname = params[:nickname]
 		@nickname = params[:nickname]
 		player.score = 100
-		player.save		
+		player.save
 		render :welcome
 	end
 

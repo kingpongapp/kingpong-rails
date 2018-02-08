@@ -21,8 +21,7 @@ A 'KingPongApp' twitter feed which updates when this handle is used in peoples t
 ##Tech used
 
 
-###Extra features 
+###Extra features
 * Ability to choose between different types of tournaments.
 * Support for multiple arenas/locations.
 * Email notifications/updates of results.
-*
