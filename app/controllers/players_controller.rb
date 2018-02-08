@@ -4,8 +4,8 @@ class PlayersController < ApplicationController
 		player.email = params[:email]
 		player.password = params[:password]
 		player.name = params[:name]
+		player.nickname = params[:nickname]
 		@nickname = params[:nickname]
-		player.image_url = params[:image]
 		player.score = 100
 		player.save		
 		render :welcome
