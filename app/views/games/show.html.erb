@@ -39,7 +39,9 @@
       <li class="nav-item">
         <a class="nav-link active" href="#">Result</a>
         <div class="result-body">
-          <form action="" method="post">
+          <form action="/games/<%=params[:id]%>" method="post">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="game_id" value="<%=params[:id]%>">
           <input type="hidden" name="authentication_token" value="form_authentication_token">
           <a href="#" class="btn btn-primary">Claim win</a>
           </form>

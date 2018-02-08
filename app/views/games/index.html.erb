@@ -1,4 +1,4 @@
-
+<%binding.pry%>
 <% if @games.length == 0%>
   <form action='/games' method="post">
     <input type="hidden" name="authenticity_token" value="form_authenticity_token">
@@ -7,8 +7,8 @@
 <% end %>
 
 <div class="draw-container">
-  
-  <% if @games%>
+
+  <% if @games %>
     <%idx = 0%>
     <% @games.each do |game|%>
       <div class="draw-row">
