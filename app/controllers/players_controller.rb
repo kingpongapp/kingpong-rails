@@ -11,6 +11,12 @@ class PlayersController < ApplicationController
 		render :welcome
 	end
 
+	def update
+		playerpic = Player.find_by(id: session[:player_id])
+		@playerpic.profilepic = params[:profilepic]
+		playerpic
+	end	
+
 	def index
 		@players = Player.all
 	end

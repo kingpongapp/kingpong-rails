@@ -59,7 +59,7 @@
       <h4 style="border-top: rgba(0, 0, 0, 0.2) solid;">Twitter <i class="fab fa-twitter"></i></h4>
       <div>
         <% @tweets.take(10).each do |tweet| %>
-          <ul class="twitterul">
+          <ul class="twitterul" style="padding-left: 1px;" >
             <p class="twitterlist"><%= tweet.text %></p><br>
           </ul>
         <% end %>

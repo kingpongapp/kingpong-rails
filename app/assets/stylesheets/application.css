@@ -55,13 +55,14 @@ h1 {
 .twitterlist {
 	background-color: rgb(29, 202, 255);
 	border-radius: 20px;
-	font-size: 20px;
+	font-size: 15px;
 	font-style: bold;
+  margin: 0 auto;
 }
 
 .twitterurl {
 	background-color: rgb(29, 202, 255);
 	margin-bottom: 0px;
-	height: 20%;
+	height: 5%;
 }
 
