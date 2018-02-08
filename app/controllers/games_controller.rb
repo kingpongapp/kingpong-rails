@@ -38,7 +38,6 @@ class GamesController < ApplicationController
 
   def update
 
-<<<<<<< HEAD
     if params[:winner] == "winner"
       # Update: Completed game
       game = Game.find(params[:id])
@@ -118,16 +117,5 @@ class GamesController < ApplicationController
       end
     end
 
-=======
-    playergame = PlayerGame.where(["game_id = ? and player_id = ?", params[:game_id], session[:player_id]])
-
-    playergame.first.win = "true"
-
-    if playergame.first.save
-
-    else
-      # Error Handling
-    end
->>>>>>> master
   end
 end
