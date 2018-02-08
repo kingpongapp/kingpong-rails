@@ -28,7 +28,7 @@ class GamesController < ApplicationController
         idx =+ 1
       end 
     end   
-    redirect_to action:index, id:1
+    redirect_to action:"index" 
   end
 
   def show

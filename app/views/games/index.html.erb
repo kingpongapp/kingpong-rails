@@ -1,40 +1,41 @@
-<%binding.pry%>
-<% if @games.length == 0%>
-  <form action='/games' method="post">
-    <input type="hidden" name="authenticity_token" value="form_authenticity_token">
-    <button>Generate Draw</button>
-  </form>
-<% end %>
-
-<div class="draw-container">
-
-  <% if @games %>
-    <%idx = 0%>
-    <% @games.each do |game|%>
-      <div class="draw-row">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src=<%= @games[idx].players[0].image_url %> alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= @games[idx].players[0].name %></h5>
-          </div>
-        </div>
-        <% #binding.pry %>
-        <div>Vs</div>
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src=<%= @games[idx].players[1].image_url %> alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= @games[idx].players[1].name %></h5>
-          </div>
-        </div>
-        <div>
-          <form action="/games/<%=game.id%>" method="get">
-            <button class="btn btn-outline-primary">Start Game</button>
-          </form>
-        </div>
-      </div>
-      <%idx += 1%>
-    <%end %>
+<div class="index-wrapper">
+  <% if @games.length == 0%>
+    <form action='/games' method="post">
+      <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+      <button>Generate Draw</button>
+    </form>
   <% end %>
+
+  <div class="draw-container">
+
+    <% if @games %>
+      <%idx = 0%>
+      <% @games.each do |game|%>
+        <div class="draw-row">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=<%= @games[idx].players[0].image_url %> alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= @games[idx].players[0].name %></h5>
+            </div>
+          </div>
+          <% #binding.pry %>
+          <div>Vs</div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=<%= @games[idx].players[1].image_url %> alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= @games[idx].players[1].name %></h5>
+            </div>
+          </div>
+          <div>
+            <form action="/games/<%=game.id%>" method="get">
+              <button class="btn btn-outline-primary">Start Game</button>
+            </form>
+          </div>
+        </div>
+        <%idx += 1%>
+      <%end %>
+    <% end %>
+  </div> 
 </div> 
 
 
