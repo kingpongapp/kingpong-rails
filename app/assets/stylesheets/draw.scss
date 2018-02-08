@@ -1,5 +1,99 @@
 .index-wrapper .draw-row {
   display: flex;
   padding: 15px;
-  border: 1px dashed gray;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.index-wrapper .draw-row:hover {
+  background-color: rgba(176, 171, 171, 0.201);
+  transition-timing-function: ease;
+}
+
+.index-wrapper .draw-row .card {
+  display: flex;
+  flex-direction: row;
+  max-height: 5em;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 10px lightgray;
+}
+
+.index-wrapper .draw-row .card.first {
+  border-right: 5px solid rgba(26, 104, 147, 0.769);
+}
+
+.index-wrapper .draw-row .card.second {
+  border-right: 5px solid rgba(197, 237, 55, 0.769);
+}
+
+.index-wrapper .draw-row .card .card-title {
+  margin: 0;
+}
+
+.index-wrapper .draw-row .card-img-top {
+  height: auto;
+  width: 5em;
+  padding: 2px;
+}
+
+.index-wrapper .draw-row > * {
+  margin: 0 1em;
+}
+
+.index-wrapper .draw-row .vs {
+  background-color: rgba(12, 40, 74, 0.824);
+  padding: 1em;
+  border-radius: 2em;
+  color: rgba(222, 116, 34, 0.81);
+  font-weight: 800;
+}
+
+.index-wrapper .generate {
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show .players {
+  margin-right: 2em;
+}
+
+.show .players .card {
+  text-align: center;
+}
+
+.show .players .score {
+  font-size: 2em;
+  border: 2px solid rgba(8, 228, 252, 0.783);
+  text-align: center;
+  color: rgba(8, 228, 252, 0.783);
+  padding: 0.5em;
+}
+
+.show .claim .btn {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  background-color: rgba(12, 40, 74, 0.824);
+  color: rgba(222, 116, 34, 0.81);
+  border: 2px solid rgba(222, 116, 34, 0.81);
+  font-weight: 800;
+}
+.show .claim .btn:hover {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  background-color: rgba(222, 116, 34, 0.81);
+  color: rgba(12, 40, 74, 0.824);
+  border: 2px solid rgba(12, 40, 74, 0.824);
+  font-weight: 800;
+}
+
+.show-wrapper .winner {
+  padding: 25px;
 }
