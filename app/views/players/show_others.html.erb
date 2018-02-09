@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="main-block">
+    <h2 class="card-title"><%= @player.name %>  <span class="badge badge-secondary"><%= @player.score %> points</span></h2>
+    <img style="height: 470px; width: 470px;" src="<%= @player.image_url %>" alt="">
+  </div>
+
+  <div class="side-block">
+    <p style="font-size: 40px;">Ranking: <%= @player_rank %></p>
+    <h4>Nickname: <%= @player.nickname %>
+    </h4>
+    <div class="bio-block">
+      <h4>BIO</h4>
+      <textarea name="bio" id="bio" cols="30" rows="5"><%= @player.bio %></textarea>
+    </div>
+    <p>Member Since: <%= @player.created_at.to_s.slice(0,10) %></p>
+    <% if @player.player_games.last %>
+      <% if @player.player_games.last.win%>
+        <% result = 'Won' %>
+      <% else %>
+        <% result = 'Lost' %>
+      <% end %>
+    <% end %>
+    <p>Last Performance: <%= result %></p>
+    <p>Games Played: <%= @player.player_games.count %></p>
+    <p>Games Won:</p>
+  </div>
+</div>
