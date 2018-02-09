@@ -16,9 +16,11 @@
 
 h1 {
   color: #0069d9;
+  padding-bottom: 20px;
 }
 
 .main {
+  margin-top: 100px;
   border: ;
   width: 90%;
   text-align: center;
@@ -37,7 +39,6 @@ h1 {
   width: 40%;
   float: left;
   padding-left: 60px;
-  padding-top: 60px;
   padding-right: 60px;
   font-size: 20px;
   margin-left: 10%;
