@@ -7,6 +7,7 @@ class PlayersController < ApplicationController
 		player.password = params[:password]
 		player.name = params[:name]
 		player.nickname = params[:nickname]
+    player.image_url = "https://images-na.ssl-images-amazon.com/images/I/41kbIruQrnL.jpg"
 		@nickname = params[:nickname]
 		player.score = 100
 		player.save
@@ -14,7 +15,7 @@ class PlayersController < ApplicationController
       render :welcome, :layout => false
 	end
 
-	
+
 	def index
 		@players = Player.all
 	end
