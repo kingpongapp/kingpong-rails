@@ -10,7 +10,8 @@ class PlayersController < ApplicationController
 		@nickname = params[:nickname]
 		player.score = 100
 		player.save
-		render :welcome
+      session[:player_id] = player.id
+      render :welcome
 	end
 
 	
