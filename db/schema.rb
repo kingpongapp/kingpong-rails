@@ -40,7 +40,12 @@ ActiveRecord::Schema.define(version: 20180208233827) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+
+    t.string "profilepic"
+
     t.string "bio"
+
   end
 
 end
