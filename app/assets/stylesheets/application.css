@@ -15,7 +15,7 @@
  */
 
 h1 {
-  color: green;
+  color: #0069d9;
 }
 
 .main {
@@ -28,7 +28,7 @@ h1 {
 }
 
 .main .welcomeimage img {
-   width: 500px;
+   width: 600px;
    height: 500px;
 }
 
@@ -39,6 +39,7 @@ h1 {
   padding-top: 60px;
   padding-right: 60px;
   font-size: 20px;
+  margin-left: 10%;
 }
 
 .fun-msg {
@@ -47,19 +48,15 @@ h1 {
 
 .welcomeimage {
   height: 100%;
-  width: 30%;
+  width: 40%;
   float: right;
   object-fit: cover;
   padding-left: 40px;
   border-left: 10px solid rgba(0, 100, 0, 0.2);
 }
 
-.welcomeimage img {
-  padding-top: 20%;
-}
-
 .homebutton {
-  color: green;
+  color: #0069d9;
   font-size: 20px;
   border-radius: 20px;
 }
@@ -67,12 +64,13 @@ h1 {
 .twitterlist {
 	background-color: rgb(29, 202, 255);
 	border-radius: 20px;
-	font-size: 20px;
+	font-size: 15px;
 	font-style: bold;
+  margin: 0 auto;
 }
 
 .twitterurl {
 	background-color: rgb(29, 202, 255);
 	margin-bottom: 0px;
-	height: 20%;
+	height: 5%;
 }

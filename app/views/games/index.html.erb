@@ -3,7 +3,7 @@
     <div class="generate">
       <form action='/games' method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <button class="btn btn-outline-info">Generate Draw</button>
+        <button class="btn btn-outline-primary">Generate Draw</button>
       </form>
     </draw>
   <% end %>
@@ -21,7 +21,7 @@
               <%player_1 = @games[idx].players[0].id %>
             </div>
           </div>
-          <% #binding.pry %>
+      
           <div class="vs">VS</div>
           <div class="card second" style="width: 18rem;">
             <img class="card-img-top" src=<%= @games[idx].players[1].image_url %> alt="Card image cap">
@@ -38,7 +38,11 @@
               </form>
             <% else %>
               <form action="/games/<%=game.id%>" method="get">
-                <button class="btn btn-outline-primary">Start Game</button>
+                <% if session[:player_id] == player_2 || session[:player_id] == player_1 %>
+                  <button class="btn btn-outline-primary">Start Game</button>
+                <% else %>
+                  <button class="btn btn-outline-primary" disabled>Start Game</button>
+                <% end %>
               </form>
             <% end %>
           </div>

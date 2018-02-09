@@ -6,6 +6,12 @@
     <input id="image_input" name="image_url" style="width: 80%;" type="text" value="<%= @player.image_url %>" placeholder="<%= @player.image_url %>">
   </div>
 
+  <form action="/players" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    <input id='input' type="file" name="preview">
+    <button>post</button>
+  </form>
+
   <div class="side-block">
     <p style="font-size: 40px;">Ranking: <%= @player_rank %></p>
     <h4>Nickname: 

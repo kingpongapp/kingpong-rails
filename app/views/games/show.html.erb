@@ -17,7 +17,8 @@
       <% players = Player.includes(:games).where(:games => {id: params[:id]}) %>
       <div class="players">
         <% players.each do |player| %>
-          <% playergame = PlayerGame.find_by(player_id: player.id) %>
+       
+          <% playergame = PlayerGame.find_by(player_id: player.id, game_id: params[:id]) %>
           <div class="card border-success mb-3" style="min-width: 18rem;">
             <div class="card-body text-success">
               <h5 class="card-title">
@@ -25,18 +26,18 @@
               </h5>
 
               <div class="score">
-                <%=player.score%>
+                <span class="badge badge-secondary"><%=player.score%> points</span>  
               </div>
             </div>
             <div class="card-footer bg-transparent border-success">
               
               <% if playergame.accepted == true %>
                 <div style="color:LightSeaGreen ">
-                  <i class="far fa-check-circle fa-5x accept-alert" style="display:none"></i>
+                  <i class="far fa-check-circle fa-5x accept-alert" ></i>
                 </div>
               <% elsif playergame.accepted == false %>
                 <div style="color:LightCoral  ">
-                  <i class="far fa-times-circle fa-5x decline-alert" style="display:none"></i>
+                  <i class="far fa-times-circle fa-5x decline-alert"></i>
                 </div>
               <% else %>
                  <form action="/games/<%=params[:id]%>" method="post">
@@ -44,7 +45,9 @@
                   <input type="hidden" name="_method" value="put">
                   <input type="hidden" name="acceptance" value=true>
                   <input type="hidden" name="player_id" value=<%=player.id%>>
-                  <button class="btn btn-outline-primary decline-btn">Accept</button>
+          
+                  <button class="btn btn-outline-primary">Accept</button>
+                
                 </form>
 
                 <form action="/games/<%=params[:id]%>" method="post">
@@ -52,7 +55,9 @@
                   <input type="hidden" name="_method" value="put">
                   <input type="hidden" name="acceptance" value=false>
                   <input type="hidden" name="player_id" value=<%=player.id%>>
-                  <button class="btn btn-outline-primary decline-btn">Decline</button>
+
+                  <button class="btn btn-outline-primary">Decline</button>
+       
                 </form>
               <% end %>
               
@@ -64,9 +69,9 @@
         <form action="/games/<%=params[:id]%>" method="post">
           <input type="hidden" name="_method" value="put">
           <input type="hidden" name="winner" value="winner">
-      
+          <input type="hidden" name="game_id" value=<%=params[:id]%>>
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <button href="#" class="btn btn-primary">Claim Win</button>
+          <button class="btn btn-primary">Claim Win</button>
         </form>
       </div>
     </div>
