@@ -16,10 +16,10 @@
 
 h1 {
   color: #0069d9;
+  padding-bottom: 20px;
 }
 
 .main {
-  border: ;
   width: 90%;
   text-align: center;
   display: -webkit-flex; /* Safari */
@@ -37,7 +37,6 @@ h1 {
   width: 40%;
   float: left;
   padding-left: 60px;
-  padding-top: 60px;
   padding-right: 60px;
   font-size: 20px;
   margin-left: 10%;
@@ -53,7 +52,7 @@ h1 {
   float: right;
   object-fit: cover;
   padding-left: 40px;
-  border-left: 10px rgba(0, 105, 217, 0.2) solid;
+  border-left: 10px solid rgba(0, 100, 0, 0.2);
 }
 
 .homebutton {

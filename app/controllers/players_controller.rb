@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
 		player.score = 100
 		player.save
       session[:player_id] = player.id
-      render :welcome
+      render :welcome, :layout => false
 	end
 
 	
