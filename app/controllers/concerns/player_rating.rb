@@ -6,7 +6,7 @@ module PlayerRating
     player02 = 0
     
     players = PlayerGame.where(game_id: params[:game_id])
-
+    
     players.each do |player|
       if player.player_id == session[:player_id]
         player01 = Player.find(session[:player_id])
@@ -15,8 +15,7 @@ module PlayerRating
       end
     end
 
-    
-
+    binding.pry
     match = EloRating::Match.new
     match.add_player(rating: player01.score, winner: true)
     match.add_player(rating: player02.score)

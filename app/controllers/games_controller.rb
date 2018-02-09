@@ -91,7 +91,7 @@ class GamesController < ApplicationController
       end
 
     elsif params[:acceptance] == "false"
-   
+
       # Validation: A player can only decline their own game
       if params[:player_id].to_i == session[:player_id]
         playergame = PlayerGame.where(["game_id = ? and player_id = ?", params[:id], session[:player_id]]).first
