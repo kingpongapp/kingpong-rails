@@ -20,7 +20,6 @@ h1 {
 }
 
 .main {
-  margin-top: 100px;
   width: 90%;
   text-align: center;
   display: -webkit-flex; /* Safari */
