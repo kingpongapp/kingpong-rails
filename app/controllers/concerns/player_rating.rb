@@ -15,7 +15,6 @@ module PlayerRating
       end
     end
 
-    binding.pry
     match = EloRating::Match.new
     match.add_player(rating: player01.score, winner: true)
     match.add_player(rating: player02.score)
