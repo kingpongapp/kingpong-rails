@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  include PlayerRating
+
 	def create
 		player = Player.new
 		player.email = params[:email]
@@ -7,7 +9,7 @@ class PlayersController < ApplicationController
 		player.nickname = params[:nickname]
 		@nickname = params[:nickname]
 		player.score = 100
-		player.save		
+		player.save
 		render :welcome
 	end
 
@@ -22,7 +24,21 @@ class PlayersController < ApplicationController
   end
 
   def api_rating
-    render json: {info: 'receive rating'}
+    parse_response = get_rating
+
+    render json: {info: parse_response}
   end
 
+  def api_update
+  	player = Player.find_by(id: session[:player_id])
+  	player.nickname = params[:nickname]
+  	player.image_url = params[:image_url]
+  	player.save
+  	render json: player
+  end
+
+  def api_show
+  	player = Player.find(params[:id])
+  	render json: player
+  end
 end

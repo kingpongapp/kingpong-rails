@@ -13,5 +13,8 @@ class PagesController < ApplicationController
     end
 
     @tweets = client.search('@kingpongapp', result_type: 'recent')
+
+    
+
   end
 end
