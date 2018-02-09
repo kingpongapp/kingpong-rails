@@ -2,16 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .player-card {
   width: 100%;
   margin-bottom: 3%;
   border-radius: 0.2em;
   float: left;
   transition: .3s;
+  text-decoration: none !important;
 }
 
 .player-card:hover {
-  transform: translateY(-0.3em);
+  transform: translateY(-0.4em);
 }
 
 .player-card header {
