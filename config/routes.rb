@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
   get '/api/players', to: 'players#api_rating'
 
+  put '/api/players', to: 'players#api_update'
+
+  get '/api/players/:id', to: 'players#api_show'
+
 end

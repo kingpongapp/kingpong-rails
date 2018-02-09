@@ -20,6 +20,12 @@ class PlayersController < ApplicationController
 	def show
 		@player = Player.find(params[:id])
 		@player_rank = Player.order('score DESC').index(@player) + 1
+
+		if @player.id != session[:player_id]
+			render :show_others
+		else
+			render :show
+		end
   end
 
   def api_rating
@@ -28,4 +34,17 @@ class PlayersController < ApplicationController
     render json: {info: parse_response}
   end
 
+  def api_update
+  	player = Player.find_by(id: session[:player_id])
+  	player.nickname = params[:nickname]
+  	player.image_url = params[:image_url]
+  	player.bio = params[:bio]
+  	player.save
+  	render json: player
+  end
+
+  def api_show
+  	player = Player.find(params[:id])
+  	render json: player
+  end
 end
