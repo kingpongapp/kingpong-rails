@@ -25,34 +25,14 @@
   </div>
   <div class="row">
     <div class="col-4">
-      <h4>Recent games</h4>
+      <h4>Twitter feed <i class="fab fa-twitter"></i></h4>
       <table class="table table-striped">
         <tbody>
-          <tr>
-            <td>Player 1</td>
-            <td>beat</td>
-            <td>Player 2</td>
+          <% @tweets.take(10).each do |tweet| %>
+          <tr class="twitterurl">
+            <td class="twitterlist"><%= tweet.text %></td>
           </tr>
-          <tr>
-            <td>Player 1</td>
-            <td>lost to</td>
-            <td>Player 2</td>
-          </tr>
-          <tr>
-            <td>Player 1</td>
-            <td>beat</td>
-            <td>Player 2</td>
-          </tr>
-          <tr>
-            <td>Player 1</td>
-            <td>beat</td>
-            <td>Player 2</td>
-          </tr>
-          <tr>
-            <td>Player 1</td>
-            <td>beat</td>
-            <td>Player 2</td>
-          </tr>
+          <% end %>
         </tbody>
       </table>
 

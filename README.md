@@ -20,8 +20,8 @@ A 'KingPongApp' twitter feed which updates when this handle is used in peoples t
 
 ##Tech used
 * Bootstrap
-* Elo
-* AWS S3
+* Elo gem for game draws
+
 
 
 ###Extra features
