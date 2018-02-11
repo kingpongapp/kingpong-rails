@@ -15,18 +15,32 @@ class GamesController < ApplicationController
     draw = RoundRobinTournament.schedule(players)
 
     draw.each do |round|
-      gm = Game.new
-      gm.save
-      idx = 0
+      
+      # gm.save
+  
       round.each do |game|
-        playergame = PlayerGame.new
-        playergame.player_id = game[idx]
-        playergame.game_id = gm.id
-         if playergame.save
-         else
-          # Error Handling
-         end
-        idx =+ 1
+        if not game.include?(nil)
+          gm = Game.new
+          gm.save
+          game.each do |player|
+            playergame = PlayerGame.new
+            playergame.player_id = player
+            playergame.game_id = gm.id
+            playergame.save
+          end
+          
+        end
+       
+        # playergame = PlayerGame.new
+        # playergame.player_id = game[idx]
+        
+        # playergame.game_id = gm.id
+        #  if playergame.save
+
+        #  else
+        #   # Error Handling
+        #  end
+        
       end
     end
     redirect_to action:"index"
