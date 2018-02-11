@@ -66,12 +66,20 @@
         <% end %>
       </div>
       <div class="claim">
+        <% pg = PlayerGame.where(["game_id = ? and accepted = ?", params[:id], true])%>
+        
+        
+        
         <form action="/games/<%=params[:id]%>" method="post">
           <input type="hidden" name="_method" value="put">
           <input type="hidden" name="winner" value="winner">
           <input type="hidden" name="game_id" value=<%=params[:id]%>>
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <button class="btn btn-primary">Claim Win</button>
+          <% if pg.count == 2 %>
+            <button class="btn btn-primary">Claim Win</button>
+          <% else %>
+            <button class="btn btn-primary" disabled>Claim Win</button>
+          <% end %>
         </form>
       </div>
     </div>
